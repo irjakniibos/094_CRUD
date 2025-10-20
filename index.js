@@ -30,3 +30,15 @@ db.connect((err) => {
     }
     console.log('Connection Successfully!');
 });
+
+//Buat method GET dan POST
+app.get('/user', (req, res) => {
+    db.query('SELECT * FROM mahasiswa', (err, results) => {
+        if (err) {
+            console.error('Error fetching users:', err);
+            res.status(500).send('Error fetching users');
+            return;
+        }
+        res.json(results);
+    });
+});
