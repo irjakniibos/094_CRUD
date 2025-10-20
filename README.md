@@ -7,7 +7,6 @@
 - PUT: Memperbarui data berdasarkan id
 - DELETE: Menghapus data berdasarkan id
 
-GET
 </p>
 
 <h4>GET</h4>
