@@ -32,7 +32,7 @@ db.connect((err) => {
 });
 
 //Buat method GET dan POST
-app.get('/user', (req, res) => {
+app.get('/api/user', (req, res) => {
     db.query('SELECT * FROM mahasiswa', (err, results) => {
         if (err) {
             console.error('Error fetching users:', err);
@@ -42,3 +42,4 @@ app.get('/user', (req, res) => {
         res.json(results);
     });
 });
+
