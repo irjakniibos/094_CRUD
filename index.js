@@ -43,8 +43,9 @@ app.get('/api/users', (req, res) => {
     });
 });
 
+//Method POST
 app.post('/api/users', (req, res) => {
-    const { nama, nim, kelas } = req.body;
+    const { nama, nim, kelas } = req.body || {};
 
     if(!nama || !nim || !kelas) {
         return  res.status(400).json({'message': 'nama, nim, dan kelas harus diisi'});
@@ -67,7 +68,7 @@ app.post('/api/users', (req, res) => {
 //Method PUT 
 app.put('/api/users/:id', (req, res) => {
     const userId = req.params.id;
-    const { nama, nim, kelas } = req.body;
+    const { nama, nim, kelas } = req.body || {};
 
     db.query(
         'UPDATE mahasiswa SET nama = ?, nim = ?, kelas = ? WHERE id = ?',
