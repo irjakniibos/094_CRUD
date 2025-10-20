@@ -47,7 +47,7 @@ app.post('/api/users', (req, res) => {
     const { nama, nim, kelas } = req.body;
 
     if(!nama || !nim || !kelas) {
-        return  res.status(400).send({'message': 'nama, nim, dan kelas harus diisi'});
+        return  res.status(400).json({'message': 'nama, nim, dan kelas harus diisi'});
     }
 
     db.query(
