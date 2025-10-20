@@ -21,3 +21,12 @@ const db = mysql.createConnection({
     database: 'mahasiswa',
     port: 3307 // sesuaikan dengan port MySQL Anda
 })
+
+// Menghubungkan ke database MySQL
+db.connect((err) => {
+    if (err) {
+        console.error('Error connecting to the MySQL:' + err.stack);
+        return;
+    }
+    console.log('Connection Successfully!');
+});
