@@ -1,0 +1,23 @@
+const express = require('express');
+let mysql = require('mysql2');
+const app = express();
+const PORT = 3000;
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+app.get('/', (req, res) => {
+    res.send('Hello World!');
+});
+
+app.listen(PORT, () => {
+    console.log(`Server is running on ${PORT}`);
+});
+
+// Konfigurasi koneksi database MySQL
+const db = mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: '1523', // sesuaikan dengan password MySQL Anda
+    database: 'mahasiswa',
+    port: 3307 // sesuaikan dengan port MySQL Anda
+})
